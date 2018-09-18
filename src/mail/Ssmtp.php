@@ -8,7 +8,7 @@ use craft\mail\transportadapters\BaseTransportAdapter;
 /**
  * Class SsmtpTransport
  */
-class SsmtpTransport extends BaseTransportAdapter
+class Ssmtp extends BaseTransportAdapter
 {
     /**
      * @inheritdoc

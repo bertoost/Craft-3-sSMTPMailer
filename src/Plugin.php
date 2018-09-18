@@ -2,7 +2,7 @@
 
 namespace bertoost\ssmtpmailer;
 
-use bertoost\ssmtpmailer\mail\SsmtpTransport;
+use bertoost\ssmtpmailer\mail\Ssmtp;
 use craft\events\RegisterComponentTypesEvent;
 use craft\helpers\MailerHelper;
 use yii\base\Event;
@@ -24,7 +24,7 @@ class Plugin extends \craft\base\Plugin
             MailerHelper::class,
             MailerHelper::EVENT_REGISTER_MAILER_TRANSPORT_TYPES,
             function(RegisterComponentTypesEvent $event) {
-                $event->types[] = SsmtpTransport::class;
+                $event->types[] = Ssmtp::class;
             }
         );
     }
