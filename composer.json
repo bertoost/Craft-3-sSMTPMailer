@@ -2,7 +2,7 @@
   "name": "bertoost/craft-ssmtpmailer",
   "description": "Craft 3 CMS plugin for adding the sSMTP mailer (sendmail replacement).",
   "type": "craft-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "craft",
     "craftcms",
