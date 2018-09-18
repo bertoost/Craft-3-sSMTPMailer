@@ -4,6 +4,14 @@ This mailer for Craft CMS 3 is a simple replacement for Sendmail, using sSMTP.
 
 More information about sSMTP [can be found here](https://wiki.archlinux.org/index.php/SSMTP)
 
+## Install plugin
+
+Use the Craft Plugin Store or use composer
+
+```
+composer require bertoost/craft-ssmtpmailer
+```
+
 ## Executed command
 
 The next command is used for sSMTP to send your email.
