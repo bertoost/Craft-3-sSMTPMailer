@@ -8,21 +8,29 @@ More information about sSMTP [can be found here](https://wiki.archlinux.org/inde
 
 Use the Craft Plugin Store or use composer
 
-```
+```bash
+# go to the project directory
+cd /path/to/my-project.test
+
+# tell Composer to load the plugin
 composer require bertoost/craft-ssmtpmailer
+
+# OR only for development
+# composer require bertoost/craft-ssmtpmailer --dev
+
+# tell Craft to install the plugin
+./craft install/plugin ssmtpmailer
 ```
 
 ## Executed command
+
+This adaptor is using the Swiftmailer Sendmail Transport literally. It is extending it and just replaces the command to execute.
 
 The next command is used for sSMTP to send your email.
 
 ```
 /usr/sbin/ssmtp -t
-``` 
-
-## Sendmail replacement
-
-This adaptor is using the Swiftmailer Sendmail Transport literally. It is extending it and just replaces the command to execute.
+```
 
 ## Configure it for development only
 
@@ -54,6 +62,7 @@ return [
                 // Get the stored email settings
                 $settings = Craft::$app->getSystemSettings()->getEmailSettings();
                 $settings->transportType = bertoost\ssmtpmailer\mail\Ssmtp::class;
+                $settings->transportSettings = [];
 
                 return craft\helpers\MailerHelper::createMailer($settings);
             },
